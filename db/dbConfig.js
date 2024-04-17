@@ -4,7 +4,7 @@ const pool = new sql.createPool({
     database: 'databaseapp',
     host: 'localhost',
     user: 'root',
-    password: 'ahahaha',
+    password: 'No way jose',
     connectionLimit: 10,
 })
 

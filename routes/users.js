@@ -24,4 +24,15 @@ router.post('/', jsonParser, function(req, res, next) {
   })
 });
 
+//DELETE handler
+router.delete('/', jsonParser, function(req, res, next) {
+  let user = req.body.user;
+  const query = 'DELETE FROM users WHERE FirstName =' + "'" + user.FirstName + "'" + 'AND LastName=' + "'" + user.LastName + "'";
+  console.log(query);
+  pool.query(query, (err, result) => {
+    console.dir(result);
+    res.end()
+  })
+});
+
 module.exports = router;
